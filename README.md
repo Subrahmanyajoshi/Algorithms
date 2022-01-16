@@ -1,2 +1,2 @@
 # Algorithms
-Implementation of commonly used algorithms in python
+Implementations of commonly used algorithms in python
