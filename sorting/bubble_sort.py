@@ -15,8 +15,7 @@ class BubbleSort(object):
     def run(self):
         for i in range(self.len - 1):
             no_swap = True
-            print(self.array)
-            for j in range(self.len - 2):
+            for j in range(self.len - 1):
                 if self.array[j + 1] < self.array[j]:
                     no_swap = False
                     self.swap(j + 1, j)
