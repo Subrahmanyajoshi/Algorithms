@@ -7,11 +7,11 @@ The goal in this problem is to find the minimum number of coins needed to change
 ### Input Format. 
 The input consists of a single integer 𝑚.
 
-### Constraints. 
-1 ≤ 𝑚 ≤ 103
-
 ### Output Format. 
 Output the minimum number of coins with denominations 1, 5, 10 that changes 𝑚.
+
+### Constraints. 
+1 ≤ 𝑚 ≤ 103
 
 ## Sample 1.
 ### Input:

@@ -1,4 +1,4 @@
-# Coin Change Problem
+# Car Fueling Problem
 
 ## Problem Description
 You are going to travel to another city that is located 𝑑 miles away from your home city. Your car can travel
