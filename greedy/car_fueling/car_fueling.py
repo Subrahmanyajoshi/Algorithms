@@ -1,7 +1,7 @@
 from typing import List
 
 
-class CarFueling:
+class CarFueling(object):
 
     @staticmethod
     def compute_min_refills(distance: int, tank: int, stops: List):
