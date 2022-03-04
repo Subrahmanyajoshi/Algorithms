@@ -1,4 +1,4 @@
-# Coin Change Problem
+# Maximum Advertisement Revenue Problem
 
 ## Problem Description
 ### Task. 
