@@ -22,7 +22,7 @@ reach the destination, output −1.
 ### Input:
 950  
 400  
-4
+4  
 200 375 550 750
 ### Output:
 2

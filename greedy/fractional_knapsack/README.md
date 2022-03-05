@@ -1,4 +1,4 @@
-# Fractional Knapsack
+# Fractional Knapsack Problem
 
 ## Problem Description
 ### Task.
