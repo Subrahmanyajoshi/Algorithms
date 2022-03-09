@@ -1,47 +1,48 @@
-# Uses python3
-import sys
 from collections import namedtuple
-
+import sys
 import numpy as np
 
 Segment = namedtuple('Segment', 'start end')
 
 
-def common(list1, list2):
-    common_elements = list(set(list1).intersection(list2))
-    return common_elements
+class CoveringSegments(object):
 
+    @staticmethod
+    def common(list1, list2):
+        common_elements = list(set(list1).intersection(list2))
+        return common_elements
 
-def optimal_points(s):
-    segments = []
-    for i in s:
-        if i.start == i.end:
-            segments.append([i.start, i.end])
-            continue
-        segments.append(np.arange(i.start, i.end + 1).tolist())
+    @staticmethod
+    def optimal_points(s):
+        segments = []
+        for i in s:
+            if i.start == i.end:
+                segments.append([i.start, i.end])
+                continue
+            segments.append(np.arange(i.start, i.end + 1).tolist())
 
-    segments.sort()
-    points = []
+        segments.sort()
+        points = []
 
-    merge_points = segments[0]
-    for i in range(1, len(segments)):
-        c_elements = common(segments[i - 1], segments[i])
+        merge_points = segments[0]
+        for i in range(1, len(segments)):
+            c_elements = CoveringSegments.common(segments[i - 1], segments[i])
 
-        if len(merge_points) == 0:
-            merge_points = c_elements
-            continue
+            if len(merge_points) == 0:
+                merge_points = c_elements
+                continue
 
-        merge_common = common(merge_points, c_elements)
+            merge_common = CoveringSegments.common(merge_points, c_elements)
 
-        if len(merge_common) == 0:
+            if len(merge_common) == 0:
+                points.append(merge_points[-1])
+                merge_points = segments[i]
+                continue
+            merge_points = merge_common
+
+        if merge_points:
             points.append(merge_points[-1])
-            merge_points = segments[i]
-            continue
-        merge_points = merge_common
-
-    if merge_points:
-        points.append(merge_points[-1])
-    return points
+        return points
 
 
 if __name__ == '__main__':
@@ -56,6 +57,6 @@ if __name__ == '__main__':
     # input = sys.stdin.read()
     # n, *data = map(int, input.split())
     # segments = list(map(lambda x: Segment(x[0], x[1]), zip(data[::2], data[1::2])))
-    points = optimal_points(segments)
+    points = CoveringSegments.optimal_points(segments)
     print(len(points))
     print(*points)
