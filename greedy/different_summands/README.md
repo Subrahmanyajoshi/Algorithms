@@ -1,4 +1,4 @@
-# Fractional Knapsack Problem
+# Different Summands Problem
 
 ## Problem Description
 ### Task.
