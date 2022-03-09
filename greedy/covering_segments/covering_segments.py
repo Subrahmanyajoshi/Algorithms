@@ -27,11 +27,6 @@ class CoveringSegments(object):
         merge_points = segments[0]
         for i in range(1, len(segments)):
             c_elements = CoveringSegments.common(segments[i - 1], segments[i])
-
-            if len(merge_points) == 0:
-                merge_points = c_elements
-                continue
-
             merge_common = CoveringSegments.common(merge_points, c_elements)
 
             if len(merge_common) == 0:
