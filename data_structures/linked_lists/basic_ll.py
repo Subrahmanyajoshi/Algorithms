@@ -31,10 +31,24 @@ class LinkedList(object):
             self.last_ptr.next = Node(val=value)
             self.last_ptr = self.last_ptr.next
 
+    def delete(self, n: int):
+        location_ptr = self.head_ptr
+        for _ in range(n - 1):
+            if location_ptr.next is None:
+                raise ValueError("Invalid location number for the given linked list")
+            location_ptr = location_ptr.next
+
+        del_ptr = location_ptr.next
+        location_ptr.next = location_ptr.next.next
+        del del_ptr
+
 
 def main():
     linked_list = LinkedList(head=Node())
     linked_list.insert(values=[1, 2, 4, 2, 2, 5])
+    print(linked_list)
+
+    linked_list.delete(3)
     print(linked_list)
 
 
