@@ -26,8 +26,7 @@ class KahnAlgorithms:
         while queue:
 
             node = queue.pop(0)
-
-            topo_sorted.append(node)
+            topo_sorted.insert(0, node)
             index += 1
 
             if node not in adj_list:
